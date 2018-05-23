@@ -2,6 +2,8 @@ package rest;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.ArrayList;
+import java.util.List;
 
 @Path("/myRest")
 
@@ -44,5 +46,21 @@ public class MyFirstRest {
 
         return student;
     }
+
+    @GET
+    @Path("/students")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Student> getStudents (){
+
+
+        List<Student> students = new ArrayList<>();
+
+        students.add(new Student(12, "Evaldas", "Grybauskas", "5422354", "eagsjs@dkdk.com"));
+        students.add(new Student(1, "Matas", "Jonaitis", "5427854", "eijjs@dkdk.com"));
+        students.add(new Student(7, "Valdas", "Otis", "5427896354", "eagppsjs@dkdk.com"));
+
+        return students;
+    }
+
 }
 
